@@ -14,5 +14,5 @@ Utilized Hugging Face to calculate the perplexity of a given text.
 Research on Perplexity in Language Models
 - [https://towardsdatascience.com/perplexity-in-language-models-87a196019a94](https://towardsdatascience.com/perplexity-in-language-models-87a196019a94)
 
-- Inspiration from GPTZero
+Inspiration from GPTZero
 - [GPTZero](https://gptzero.me/)
