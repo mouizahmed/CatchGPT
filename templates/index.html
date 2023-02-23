@@ -15,7 +15,7 @@
     <div class="">
       <form id="form">
         <label for="text">Text:</label><br>
-        <textarea class="form-control" rows="3" cols="50" type="text" id="text" name="text"></textarea><br>
+        <textarea class="form-control" rows="5" cols="50" type="text" id="text" name="text"></textarea><br>
         <input class="btn btn-dark" type="submit" value="Submit">
       </form>
     </div>
@@ -23,8 +23,14 @@
     <div class="spinner-border" role="status" style="display: none" id="spinner">
       <span class="sr-only"></span>
     </div>
-    <p id="result" class="results"></p>
 
+    <div class="answer" style="display: none">
+      <span>Average Perplexity Score: </span>
+      <span id="avgPP"></span>
+      <br>
+      <span>Burstiness Score: </span>
+      <span id="burstiness"></span>
+    </div>
     <!-- {% if output %}
         <p>{{ output["text"] }}</p>
     {% endif %} -->

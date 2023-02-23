@@ -38,8 +38,8 @@ class model:
         print("Avg Perplexity", avgPP)
         print("Sample Burstiness", burstiness)
         output = dict()
-        output['avgPP'] = avgPP
-        output['burstiness'] = burstiness
+        output['avgPP'] = str(round(avgPP, 2))
+        output['burstiness'] = str(round(burstiness, 2))
         output['PPL'] = perplexity_per_line
         output['text'] = text
 

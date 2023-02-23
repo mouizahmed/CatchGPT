@@ -3,7 +3,8 @@ $(document).ready(function() {
     
     $('form').on('submit', function(event) {
         event.preventDefault();
-        $('#result').hide();
+        //$('#result').hide(); -- average
+        $('.answer').hide();
         $('.spinner-border').show();
         $.ajax({
             data: { text: $('#text').val() },
@@ -13,8 +14,10 @@ $(document).ready(function() {
         }).done(function(data) {
             console.log(data);
             $('.spinner-border').hide();
-            $('#result').show();
-            $('#result').html(data.avgPP);
+            //$('#result').show(); -- average
+            $('.answer').show();
+            $('#avgPP').html(data.avgPP);
+            $('#burstiness').html(data.burstiness);
         })
 
         
