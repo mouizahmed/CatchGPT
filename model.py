@@ -34,9 +34,16 @@ class model:
 
         data = np.array(perplexity_per_line)
         burstiness = np.std(data)
-
-        print("Avg Perplexity", sum(perplexity_per_line) / len(perplexity_per_line))
+        avgPP = sum(perplexity_per_line) / len(perplexity_per_line)
+        print("Avg Perplexity", avgPP)
         print("Sample Burstiness", burstiness)
+        output = dict()
+        output['avgPP'] = avgPP
+        output['burstiness'] = burstiness
+        output['PPL'] = perplexity_per_line
+        output['text'] = text
+
+        return output
 
     def getPerplexityPerLine(self, line):
         encodings = self.tokenizer(line, return_tensors="pt")
