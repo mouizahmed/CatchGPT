@@ -9,7 +9,6 @@ def calculate():
     data = request.form['text']
     modelTest = model()
     output = modelTest(data)
-    
     return jsonify(output)
 
 @app.route("/")

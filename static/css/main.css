@@ -10,7 +10,27 @@ body {
 }
 
 .answer {
-    text-align: center;
+    text-align: left;
+    
     /* display: flex;
     justify-content: space-between; */
+}
+
+.inline {
+    display: inline;
+    padding: 0;
+}
+
+.formSection {
+    text-align: center;
+}
+
+.main {
+    width: 70vw;
+}
+
+.sentences {
+    width: 100%;
+    height: 500px;
+    border-style: solid;
 }

@@ -18,6 +18,8 @@ $(document).ready(function() {
             $('.answer').show();
             $('#avgPP').html(data.avgPP);
             $('#burstiness').html(data.burstiness);
+            $('#maxPPL_line').html(data.maxPPL_line);
+            $('#maxPPL').html(data.maxPPL);
         })
 
         

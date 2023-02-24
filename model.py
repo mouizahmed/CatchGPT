@@ -19,13 +19,15 @@ class model:
 
     def __call__(self, text):
         lines = re.split('\.[ | \n]', text)
+        linesFormatted = []
         perplexity_per_line = []
         for i, line in enumerate(lines):
             if i < len(lines)-1:
                 line = line + "."
-            if lines[0] == "\n":
+            if line[0] == "\n":
                 line = line[1:]
             print(line)
+            linesFormatted.append(line)
             pps = self.getPerplexityPerLine(line).item()
             perplexity_per_line.append(pps)
             print(pps)
@@ -41,8 +43,12 @@ class model:
         output['avgPP'] = str(round(avgPP, 2))
         output['burstiness'] = str(round(burstiness, 2))
         output['PPL'] = perplexity_per_line
-        output['text'] = text
-
+        output['lines'] = linesFormatted
+        output['maxPPL'] = int(max(perplexity_per_line))
+        output['maxPPL_index'] = perplexity_per_line.index(max(perplexity_per_line))
+        output['maxPPL_line'] = linesFormatted[output['maxPPL_index']]
+        #print(lines)
+        print(output['maxPPL_line'])
         return output
 
     def getPerplexityPerLine(self, line):
