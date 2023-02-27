@@ -11,20 +11,23 @@
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </head>
 <body>
-    <div class="main">
-      <h1>CatchGPT</h1> 
+    <div class="main"> <!-- flex -->
+
+      <div class="input">
+        <h1>CatchGPT</h1> 
         <form id="form" class="formSection">
           <label for="text">Text:</label><br>
           <textarea class="form-control" rows="5" cols="50" type="text" id="text" name="text"></textarea><br>
           <input class="btn btn-dark" type="submit" value="Submit">
         </form>
-    
-
+      </div>
+      <!-- <div class="spacer"></div> -->
       <div class="spinner-border" role="status" style="display: none" id="spinner">
         <span class="sr-only"></span>
       </div>
 
       <div class="answer" style="display: none">
+        <div id="verdict" class="verdict"></div>
         <h1>Stats</h1>
         <h6 class="inline">Average Perplexity Score: </h6>
         <span id="avgPP"></span>
@@ -37,8 +40,7 @@
         <h6 class="inline">with a perplexity of</h6>
         <span id="maxPPL" class="inline"></span>
 
-        <div class="sentences">
-
+        <div id="sentences" class="sentences">
         </div>
       </div>
       <!-- {% if output %}

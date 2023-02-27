@@ -2,18 +2,57 @@ body {
     margin: 0;
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    overflow-y: auto;
+
+    
+}
+
+.ul-style {
+    list-style: none;
+    padding-left:0;
+    padding-bottom: 5px;
+  }
+
+.li-style {
+    margin: 10px;
+}
+
+.li-style-highlight {
+    margin: 10px;
+    background-color: #FFFF00
+}
+
+.main {
+    width: 70vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   
+  
+}
+
+.verdict {
+    text-align: center;
+}
+
+
+.input {
+    margin-top: 25%;
+    width: 100%;
+ 
 }
 
 .answer {
     text-align: left;
-    
-    /* display: flex;
-    justify-content: space-between; */
+    margin-top: 5%;
+    min-width: 100%;
 }
 
 .inline {
@@ -22,15 +61,11 @@ body {
 }
 
 .formSection {
-    text-align: center;
-}
-
-.main {
-    width: 70vw;
+    text-align: left;
 }
 
 .sentences {
     width: 100%;
-    height: 500px;
     border-style: solid;
+    margin-bottom: 25%;
 }
