@@ -40,6 +40,7 @@ body {
 
 .verdict {
     text-align: center;
+    margin-bottom: 5%;
 }
 
 
@@ -49,10 +50,19 @@ body {
  
 }
 
+.info {
+    font-style: italic;
+}
+
+.how-to {
+    text-align: left;
+    width: 100%;
+}
+
 .answer {
     text-align: left;
-    margin-top: 5%;
     min-width: 100%;
+    margin-bottom: 5%;
 }
 
 .inline {
@@ -62,10 +72,92 @@ body {
 
 .formSection {
     text-align: left;
+    margin-bottom: 5%;
 }
 
 .sentences {
     width: 100%;
     border-style: solid;
-    margin-bottom: 25%;
 }
+
+.caption-container {
+    
+    display: flex;
+    flex-direction: row;
+    vertical-align: center;
+    align-items: center;
+
+    
+}
+
+.yellow-box {
+    background-color: #FFFF00;
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    
+
+}
+
+.caption {
+    vertical-align: center;
+}
+
+/* .chart {
+   
+    margin-bottom: 25%;
+} */
+
+@media only screen and (max-width: 600px) {
+    .charts-container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+          
+    }
+
+    .chart-container1 {
+        width: 40vh;
+       
+    }
+    
+    .chart-container2 {
+        width: 40vh;
+      
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .charts-container {
+        display: flex;
+        flex-direction: row; 
+    
+    }
+
+    .chart-container1 {
+        width: 50%;
+        
+    }
+    
+    .chart-container2 {
+        width: 50%;
+       
+    }
+  }
+
+  .bottom {
+    margin-bottom: 25%;
+  }
+
+  .warning {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+  }
+
+  .margin {
+    margin-bottom: 5%;
+  }
+
+
+
+
