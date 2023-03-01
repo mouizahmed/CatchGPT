@@ -1,10 +1,9 @@
 import re
 import torch
 import numpy as np
-from transformers import GPT2LMHeadModel, GPT2TokenizerFast, pipeline, set_seed, AutoModel, AutoTokenizer
+from transformers import GPT2LMHeadModel, GPT2TokenizerFast
 from collections import Counter
 from tqdm import tqdm
-import nltk
 
 # print(torch.cuda.is_available())
 # print(torch.zeros(1).cuda())
