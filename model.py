@@ -12,7 +12,7 @@ import nltk
 
 class model:
     def __init__(self):
-        self.device = "cuda"
+        self.device = "cpu"
         self.model_id = "gpt2"
         self.model = GPT2LMHeadModel.from_pretrained(self.model_id).to(self.device)
         self.tokenizer = GPT2TokenizerFast.from_pretrained(self.model_id)
