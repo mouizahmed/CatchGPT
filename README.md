@@ -12,6 +12,10 @@ This application was inspired by the rise of ChatGPT and its widespread use of p
 
 I have plans to incorporate the [DetectGPT](https://arxiv.org/pdf/2301.11305.pdf) implementation in the near future to gain a better understanding of Machine-Generated Text (NLP Models), its detection, and learn more about machine learning.
 
+## Technologies
+
+Python (Flask), Hugging Face Pretrained GPT2 Model (to calculate perplexity of fixed-length models), JavaScript (jQuery), jCharts, HTML/CSS 
+
 ## Acknowledgement
 
 Utilized Hugging Face to calculate the perplexity of a given text.
