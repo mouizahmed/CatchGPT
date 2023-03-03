@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, jso
 from model import model
 
 app = Flask(__name__)
-
+app.config['TIMEOUT'] = 300
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
