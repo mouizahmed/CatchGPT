@@ -30,7 +30,7 @@ $(document).ready(function() {
             $('#verdict').empty();
             //console.log(data.avgPP < data.burstiness);
             
-            if (data.avgPP > 80 || (data.avgPP >= data.burstiness)) {
+            if (data.avgPP > 80) {
                 var verdict = $("<h4>Your text is most likely written entirely by a human.<h4>");
                 $('#verdict').append(verdict);
             } else if (data.avgPP > 50 && data.avgPP < 80) {
