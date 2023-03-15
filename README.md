@@ -22,6 +22,10 @@ Python (Flask), Hugging Face Pretrained GPT2 Model (to calculate perplexity of f
 pip install -r requirements.txt
 ```
 
+```
+python3 app.py
+```
+
 ## Acknowledgement
 
 Utilized Hugging Face to calculate the perplexity of a given text.
