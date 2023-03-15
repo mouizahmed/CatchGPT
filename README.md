@@ -16,6 +16,12 @@ I have plans to incorporate the [DetectGPT](https://arxiv.org/pdf/2301.11305.pdf
 
 Python (Flask), Hugging Face Pretrained GPT2 Model (to calculate perplexity of fixed-length models), JavaScript (jQuery), jCharts, HTML/CSS 
 
+## How to run
+
+```
+pip install -r requirements.txt
+```
+
 ## Acknowledgement
 
 Utilized Hugging Face to calculate the perplexity of a given text.
