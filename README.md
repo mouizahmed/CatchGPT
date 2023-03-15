@@ -18,13 +18,19 @@ Python (Flask), Hugging Face Pretrained GPT2 Model (to calculate perplexity of f
 
 ## How to run
 
+Install requirements:
+
 ```
 pip install -r requirements.txt
 ```
 
+Start app:
+
 ```
 python3 app.py
 ```
+
+The app will be hosted on ``` http://127.0.0.1:5000/ ```
 
 ## Acknowledgement
 
