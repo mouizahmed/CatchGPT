@@ -10,6 +10,8 @@ from tqdm import tqdm
 
 
 class model:
+
+    
     def __init__(self):
         self.device = "cpu"
         self.model_id = "gpt2"
@@ -18,6 +20,7 @@ class model:
         self.max_length = self.model.config.n_positions
         self.stride = 512
 
+    
     def __call__(self, text):
         lines = re.split('\.[ | \n]', text)
 
