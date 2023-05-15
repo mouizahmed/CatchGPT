@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from model import model
+from memory_profiler import memory_usage
 
 app = Flask(__name__)
 app.config['TIMEOUT'] = 300

@@ -1,10 +1,13 @@
 import re
 import torch
+import nltk
+nltk.download('punkt')
 import numpy as np
 from transformers import GPT2LMHeadModel, GPT2TokenizerFast
 from collections import Counter
 from tqdm import tqdm
 
+from nltk.tokenize import sent_tokenize
 # print(torch.cuda.is_available())
 # print(torch.zeros(1).cuda())
 
@@ -20,28 +23,13 @@ class model:
         self.max_length = self.model.config.n_positions
         self.stride = 512
 
-    
     def __call__(self, text):
-        lines = re.split('\.[ | \n]', text)
-
-        linesFormatted = []
+    
+        lines = sent_tokenize(text)
         allInfo = []
         perplexity_per_line = []
 
         for i, line in enumerate(lines):
-
-            if i < len(lines)-1:
-                line = line + "."
-            if len(line) == 0:
-                lines.remove(line)
-                continue
-            if line[0] == "\n":
-                line = line[1:]
-
-            # self.burstiness(line)
-            # self.generate(line)
-            #self.BPL(line)
-            linesFormatted.append(line)
             ppl_object = dict()
             ppl_object["line"] = line
             pps = self.getPerplexityPerLine(line).item()
@@ -53,26 +41,24 @@ class model:
         data = np.array(perplexity_per_line)
         #print(data)
         burstiness = np.std(data)
-        avgPP = sum(perplexity_per_line) / len(perplexity_per_line)
-        
+        #avgPP = sum(perplexity_per_line) / len(perplexity_per_line)
+        avgPP = torch.mean(torch.tensor(perplexity_per_line)).item()
         output = dict()
-        # output['avgPP'] = str(round(avgPP, 2))
         output['avgPP'] = avgPP
         output['avgLength'] = sum(item['length'] for item in allInfo ) / len(allInfo)
         senLengths = np.array(list(item['length'] for item in allInfo))
         
-        #print(item['length'] for item in allInfo)
         output['lengthVariation'] = np.std(senLengths)
         output['burstiness'] = burstiness
         output['PPL'] = perplexity_per_line
-        output['lines'] = linesFormatted
+        output['lines'] = lines
         output['maxPPL'] = int(max(perplexity_per_line))
         output['maxPPL_index'] = perplexity_per_line.index(
             max(perplexity_per_line))
-        output['maxPPL_line'] = linesFormatted[output['maxPPL_index']]
+        output['maxPPL_line'] = lines[output['maxPPL_index']]
         output['allInfo'] = allInfo
         return output
-
+    
     def getPerplexityPerLine(self, line):
         encodings = self.tokenizer(line, return_tensors="pt")
         seq_len = encodings.input_ids.size(1)
@@ -103,10 +89,7 @@ class model:
                 break
 
         ppl = torch.exp(torch.stack(nlls).sum() / end_loc)
-        #print(ppl.item() / seq_len)
+     
         return ppl
     
 
-    
-# testModel = model()
-# testModel("Flask is a popular open-source micro web framework for building web applications in Python. It was developed by Armin Ronacher and released in 2010. Flask is designed to be lightweight and flexible, making it easy to get started with and to customize to your needs. It is used by many developers to create simple to complex web applications and APIs. Flask is built on top of the Werkzeug toolkit, which provides low-level utilities for handling HTTP requests and responses, and the Jinja2 templating engine, which allows you to easily create dynamic HTML pages. Flask also provides a number of extensions that you can use to add additional functionality to your application, such as authentication, database integration, and more. One of the key benefits of Flask is its simplicity and minimalism. Flask has a small core that provides basic features, such as routing and request handling, but leaves the rest of the functionality up to you. This allows you to build your application in a modular way, adding only the features you need and keeping your codebase small and maintainable. Flask is often compared to other popular web frameworks such as Django, Pyramid, and Bottle. While these frameworks provide more out-of-the-box features than Flask, they can also be more complex and require more setup time. Flask is a good choice if you want a lightweight and flexible framework that you can customize to your needs.")

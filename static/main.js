@@ -29,16 +29,19 @@ $(document).ready(function() {
             //$('#lines').html(data.lines);
             $('#verdict').empty();
             //console.log(data.avgPP < data.burstiness);
-            
+            var list = $("<ul class='ul-style'></ul>");
+            var part = false;
             if (data.avgPP > 80) {
                 var verdict = $("<h4>Your text is most likely written entirely by a human.<h4>");
                 console.log("test");
                 $('#verdict').append(verdict);
             } else if (data.avgPP > 50 && data.avgPP < 80) {
                 var verdict = $("<h4 class='verdict'>Your text may include parts written by an AI<h4>");
+                part = true;
                 $('#verdict').append(verdict);
             } else if (data.avgPP <= data.burstiness) {
                 var verdict = $("<h4 class='verdict'>Your text may include parts written by an AI<h4>");
+                part = true;
                 $('#verdict').append(verdict);
             } else {
                 var verdict = $("<h4>Your text is most likely written entirely by an AI<h4>");
@@ -47,7 +50,7 @@ $(document).ready(function() {
 
             var list = $("<ul class='ul-style'></ul>");
             $.each(data.allInfo, function(i, object) {
-                if (data.avgPP > 50 && data.avgPP < 80) { // TO HIGHLIGHT IF PART AI
+                if (part == true) { // TO HIGHLIGHT IF PART AI
       
             
                     if (object.ppl < data.avgPP + 0.5 * data.burstiness && object.length > 15) {
