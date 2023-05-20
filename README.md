@@ -1,5 +1,11 @@
 # CatchGPT
 
+## Instructions to Run the Application
+- Clone the repository using Git
+- Open terminal -> type `pip -r install requirements.txt` or `pip3 -r install requirements.txt`
+- To launch the application -> type `python app.py` or `python3 app.py`
+- Open your preferred browser and navigate to `http://127.0.0.1:5000/`
+
 CatchGPT is a tool that can determine if a particular text is written by an AI or a human being by analyzing the text's average perplexity per line score and its burstiness.
 
 In general, perplexity is the measurement of how likely the model can predict the next word in an input text sequence. This is often used to gauge the performance of a natural language processing model. Texts with a high perplexity value are generally written by humans, while AI-generated text typically has lower perplexity values.
