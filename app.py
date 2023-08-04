@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-from model import model
-from memory_profiler import memory_usage
+from model import model  
 
 app = Flask(__name__)
-app.config['TIMEOUT'] = 300
+# app.config['TIMEOUT'] = 300
 
 @app.route('/calculate', methods=['POST'])
 def calculate():

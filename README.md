@@ -1,10 +1,16 @@
 # CatchGPT
 
-## Instructions to Run the Application
-- Clone the repository using Git
-- Open terminal -> type `pip -r install requirements.txt` or `pip3 -r install requirements.txt`
-- To launch the application -> type `python app.py` or `python3 app.py`
-- Open your preferred browser and navigate to `http://127.0.0.1:5000/`
+## Instructiokns to Run the Application (With Docker)
+- Clone the repository using Git.
+- Open terminal -> run `docker build -t catchgpt .`.
+- To launch the application -> run `docker run -d -p 5000:5000 catchgpt`.
+- Open your preferred browser and navigate to `localhost:5000`.
+
+## Instructions to Run the Application (Without Docker)
+- Clone the repository using Git.
+- Open terminal -> type `pip install -r requirements.txt` or `pip3 install -r requirements.txt`.
+- To launch the application -> type `python app.py` or `python3 app.py`.
+- Open your preferred browser and navigate to `http://127.0.0.1:5000/`.
 
 CatchGPT is a tool that can determine if a particular text is written by an AI or a human being by analyzing the text's average perplexity per line score and its burstiness.
 
