@@ -1,6 +1,6 @@
 # CatchGPT
 
-## Instructiokns to Run the Application (With Docker)
+## Instructions to Run the Application (With Docker)
 - Clone the repository using Git.
 - Open terminal -> run `docker build -t catchgpt .`.
 - To launch the application -> run `docker run -d -p 5000:5000 catchgpt`.
