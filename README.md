@@ -1,4 +1,4 @@
-# CatchGPT
+# CatchGPT (Deprecated -- will be revamped later)
 
 ## Instructions to Run the Application (With Docker)
 - Clone the repository using Git.
